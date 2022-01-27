@@ -1,0 +1,5 @@
+# Timing and Retries
+
+* The previous higher order functions are related to querying data, here are some examples of higher order functions that are not related to querying:
+    * `Timekeeper` class - this particular class has a `Measure` method. You pass an `Action`, and the method will execute that `Action` and measure the amount of time required to execute the action. This is using the `Stopwatch` class using the `System.Diagnostics` namespace.
+    * `WithRetry` method - is an extension method for `Func<T>`. This method will execute the incoming function in a `try catch` block. If a `WebException` is thrown while executing, the function will retry the operation. You can determine how many times you'd like it to retry the operation. This function is only good when trying to download data from the web, but you could use generic type parameters to specify any type of exception and use this anywhere.
